@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In & Sign Up</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container" id="signin-form">
+            <h2>Sign In</h2>
+            <form action="/login" method="POST">
+                <input name="email" type="email" placeholder="email" required>
+                <input name="password" type="password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
+                <p>Don't have an account? <a href="#signup" onclick="showSignup()">Sign Up</a></p>
+            </form>
+        </div>
+
+        <div class="form-container hidden" id="signup-form">
+            <h2>Sign Up</h2>
+            <form action="/signup" method="POST">
+                <input name="name" type="text" placeholder="Username" required>
+                <input name="email" type="email" placeholder="email" required>
+                <input name="password" type="password" placeholder="Password" required>
+                <input name="confirmPassword" type="password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+                <p>Already have an account? <a href="#signin" onclick="showSignin()">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showSignup() {
+            document.getElementById('signin-form').classList.add('hidden');
+            document.getElementById('signup-form').classList.remove('hidden');
+        }
+
+        function showSignin() {
+            document.getElementById('signup-form').classList.add('hidden');
+            document.getElementById('signin-form').classList.remove('hidden');
+        }
+
+        // document.querySelector("button").addEventListener("click", (e) => {
+        //     e.preventDefault();
+        // })
+    </script>
+</body>
+</html>
