@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const password= "Zffw2uw6EAdFJU18";
 
 async function connectDB() {
   try {
